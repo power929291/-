@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/moneyctrl.css">
+</head>
+<body>
+<section id="header" class="header">
+  <div class="head">
+    <div class="back">
+      <a href="index.html" class="iconfont">&#xe697;</a>
+    </div>
+    <h1>省钱控 - 最新优惠</h1>
+    <div class="home">
+      <a href="javascript:;"></a>
+    </div>
+  </div>
+</section>
+<main>
+  <div class="money-ctrl cu-list">
+
+    <!--<div class="clearfix page">-->
+      <!--<span class="w33">-->
+        <!--<a href="moneyctrl.html?pageid=0">上一页</a>-->
+      <!--</span>-->
+      <!--<span class="w33">-->
+        <!--<select class="selectPage" name="select" selected="" >-->
+	        			<!--<option value="1" selected="selected">1/14</option>-->
+        <!--</select>-->
+      <!--</span>-->
+      <!--<span class="w33">-->
+        <!--<a href="moneyctrl.html?pageid=0">下一页</a>-->
+      <!--</span>-->
+    <!--</div>-->
+  </div>
+</main>
+</body>
+</html>
+
+
+<script src="./common/config.js"></script>
+<script src="./common/common2.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+<script id="tplstr" type="text/html">
+  <ul>
+    {{each result as item index}}
+    <li class="money">
+      <a href="moneyproduct.html?productid={{item.productId}}">
+          <div class="pic fl">
+          {{#item.productImgSm}}
+          </div>
+          <div class="info">
+              <div class="top">
+                  <span>{{item.productName}}</span>
+                  <span>{{item.productPinkage}}</span>
+              </div>
+              <div class="bottom">
+                  <span>{{item.productFrom}} | {{item.productTime}}</span>
+                  <span class="common">
+                  <i></i>
+                  {{item.productComCount}}
+                  </span>
+              </div>
+          </div>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+  <div class="clearfix page">
+        <span class="w33 one">
+          <a href="moneyctrl.html?pageid=">上一页</a>
+        </span>
+        <span class="w33 two">
+	          <select class="select" name="select" selected="">
+              <!--<option value=""></option>-->
+              </select>
+        </span>
+        <span class="w33 three">
+          <a href="javascript:;">下一页</a>
+        </span>
+  </div>
+
+</script>
+
+<script>
+  $(function render() {
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+    var page = obj.pageid;
+    console.log(page);
+
+
+    $.ajax({
+        url:Route.baseUrl + '/api/getmoneyctrl',
+        data:obj,
+        success:function(data){
+          var totol = Math.floor(data.totalCount/data.pagesize);
+          var one;
+          var three;
+          if(page > 0){
+            one = +page - 1;
+          }else{
+            one = 0;
+          }
+          if(page >= totol){
+            three = totol
+          }else{
+            three = +page + 1;
+          }
+          var tplstr = template('tplstr',data);
+          $('.money-ctrl').html(tplstr);
+          $('#selectPage')
+
+          $('.one a').attr('href','moneyctrl.html?pageid='+one)
+          $('.three a').attr('href','moneyctrl.html?pageid='+three)
+
+            var tolPage = Math.ceil(data.totalCount /data.pagesize);
+            for(var i = 1; i <= tolPage; i++){
+              if(i <= tolPage){
+                var str = "<option> "+ i +"/"+ tolPage +" </option>"
+                $('.select').append(str);
+              }
+            }
+
+          $('.select').change(function(){
+              //alert($(this).children('option:selected').val());
+              //alert($(this).children('option:selected').index());
+              var selected = $(this).children('option:selected');
+              pageid = selected.index();
+//              console.log(pageid);
+              window.location.href = 'moneyctrl.html?pageid='+pageid;
+            });
+
+          $('.select option').eq(page).attr('selected','selected');
+
+        }
+    })
+  })
+
+
+
+
+
+
+</script>

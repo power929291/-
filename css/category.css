@@ -1,0 +1,58 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+.category .row {
+  border-radius: 0.13333rem;
+  background: #ededed;
+  border: 1px solid #ccc;
+  color: #666;
+}
+[data-dpr='1'] .category .row {
+  font-size: 14px;
+}
+[data-dpr='2'] .category .row {
+  font-size: 28px;
+}
+[data-dpr="3"] .category .row {
+  font-size: 42px;
+}
+.category .row .category-title .pro > a {
+  display: block;
+  height: 1.06664rem;
+  width: 100%;
+  background: url(../images/arrow1.gif) right center no-repeat;
+  line-height: 1.06664rem;
+  color: #000;
+  padding-left: 0.213328rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+}
+[data-dpr='1'] .category .row .category-title .pro > a {
+  font-size: 16px;
+}
+[data-dpr='2'] .category .row .category-title .pro > a {
+  font-size: 32px;
+}
+[data-dpr="3"] .category .row .category-title .pro > a {
+  font-size: 48px;
+}
+.category .row .category-title .pro .category-content {
+  background-color: #fff;
+}
+.category .row .category-title .pro .category-content > li {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  height: 1.039974rem;
+  line-height: 1.039974rem;
+}
+.category .row .category-title .pro .category-content > li a {
+  display: block;
+  width: 100%;
+  color: #333;
+  text-decoration: none;
+}

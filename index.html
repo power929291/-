@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="header">
+      <div class="fb-header">
+        <div class="right">
+          <a href="javascript:;">
+            <img src="images/header_app.png" alt="">
+          </a>
+        </div>
+        <div class="left">
+          <a href="index.html" title="慢慢买">
+            <img src="images/header_logo.png" alt="">
+          </a>
+        </div>
+      </div>
+    </header>
+    <section class="fb-section">
+        <div class="section">
+          <div class=right>
+            <input type="text" value="搜索">
+          </div>
+          <div class=left>
+            <input class="left" type="text" placeholder="请输入你想比价的商品">
+          </div>
+        </div>
+    </section>
+    <section class="fb-menu">
+      <div class="menu">
+        <ul class="clearfix menuList">
+        </ul>
+      </div>
+    </section>
+    <section class="recommen">
+      <div class="box">
+        <span>超值折扣推荐</span>
+        <img class="fr" src="images/more.png" alt="">
+      </div>
+    </section>
+    <section class="recommen-product">
+      <div class="list">
+        <ul>
+          <!---->
+          <!--<li>-->
+            <!--<a href="#">-->
+              <!--<div class="pic fl">-->
+                <!--<img src="images/product.jpg" alt="风扇">-->
+              <!--</div>-->
+              <!--<div class="info">-->
+                <!--<div class="top">-->
+                  <!--<span>移动端凑单品：海天 鲜味 生抽 1.28L</span>-->
+                  <!--<span>10.9元</span>-->
+                <!--</div>-->
+                <!--<div class="bottom">-->
+                  <!--<span>京东商城 | 10-25 14:10</span>-->
+                  <!--<span class="common">-->
+                    <!--<i></i>-->
+                    <!--1-->
+                  <!--</span>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</a>-->
+          <!--</li>-->
+        </ul>
+        <div class="more-bar">
+          <a href="moneyctrl.html">更多优惠信息 »</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="list-title">
+        <div class="box">
+          <span>品牌排行</span>
+          <img class="fr" src="images/more.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="top">
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <a href="#">
+          <img src="images/top.jpg" alt="">
+          <span>返回顶部</span>
+        </a>
+      </div>
+      <div class='mft-msg'>
+        <p>
+          <a href="javascript:;" style='color:red'>手机APP下载</a>
+          <a href="javascript:;" style='color:black'>慢慢买手机版</a>
+          <a href="javascript:;">--掌上比价平台</a>
+        </p>
+        <p>m.manmanbuy.com</p>
+      </div>
+    </section>
+</body>
+</html>
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+  <li>
+    <a href="{{item.titlehref}}">
+      {{#item.img}}
+      <p>{{item.name}}</p>
+    </a>
+  </li>
+  {{/each}}
+
+</script>
+
+<script id="tplstr" type="text/html">
+
+  {{each result as item index}}
+  <li class="money">
+  <a href="moneyproduct.html?productid={{item.productId}}">
+      <div class="pic fl">
+      {{#item.productImgSm}}
+  </div>
+  <div class="info">
+      <div class="top">
+      <span>{{item.productName}}</span>
+  <span>{{item.productPinkage}}</span>
+  </div>
+  <div class="bottom">
+      <span>{{item.productFrom}} | {{item.productTime}}</span>
+  <span class="common">
+      <i></i>
+      {{item.productComCount}}
+  </span>
+  </div>
+  </div>
+  </a>
+  </li>
+  {{/each}}
+
+</script>
+<!--3请求数据-->
+<script>
+  $(function () {
+        $.ajax({
+          url:Route.baseUrl + '/api/getindexmenu',
+          success:function(data){
+            var tplstr = template('tpl',data);
+            $('.menu ul').html(tplstr);
+          }
+        })
+  })
+
+  $(function () {
+    $.ajax({
+      url: Route.baseUrl + '/api/getmoneyctrl',
+      success:function (data) {
+          var tplstr = template('tplstr',data)
+          $('.list ul').html(tplstr);
+
+        $(function () {
+        $('.menuList > li').eq(7).nextAll().hide();
+        $('.menuList > li').eq(7).on('click',function (e) {
+          $('.menuList > li').eq(7).nextAll().toggle();
+          e.preventDefault();
+          })
+        })
+      }
+    })
+  })
+
+
+</script>
+

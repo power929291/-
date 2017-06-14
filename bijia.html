@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/bijia.css">
+</head>
+<body>
+<section class="product-bijia">
+  <!--<div class="product-list-title">-->
+    <!--&lt;!&ndash;<a href="index.html" class="list-title1">首页</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="list-title2">电视</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="list-title3">乐视TV(Letv)S50</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a href="#" class="select">筛选</a>&ndash;&gt;-->
+  <!--</div>-->
+  <!--<div class="product-bijia">-->
+    <!--&lt;!&ndash;<div class="product-name">乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</div>&ndash;&gt;-->
+    <!--<div class="product-name">{{item.productName}}</div>-->
+    <!--<div class="product-img">-->
+      <!--&lt;!&ndash;<img src="images/Thumb_2016.png" alt="">&ndash;&gt;-->
+      <!--{{item.productImg}}-->
+    <!--</div>-->
+    <!--<div class="product-collect">-->
+      <!--&lt;!&ndash;<a href="javascript:setfav(473088);">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="images/sc.jpg" alt="">&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<div class="tab">-->
+      <!--<ul>-->
+        <!--<li class="cur">-->
+          <!--<a href="#">比价购买</a>-->
+        <!--</li>-->
+        <!--<li class="mtab">-->
+          <!--<a href="#">产品参数</a>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<a href="#">评价(2322)</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="plist">-->
+      <!--<a href="#">-->
+          <!--{{item.bjShop}}-->
+      <!--</a>-->
+      <!--<div class="note">-->
+        <!--* 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="product-com-title">-->
+      <!--<div>网友评价</div>-->
+    <!--</div>-->
+    <div class="product-com-list">
+      <ul>
+        <li>
+          <!--<div class="clearfix">-->
+            <!--<span class="pull-left com-name">b***r</span>-->
+            <!--<span class="pull-right com-time">2016/10/1</span>-->
+          <!--</div>-->
+          <!--<div class="clearfix">-->
+            <!--<span class="pull-right com-from">购买自：京东商城</span>-->
+          <!--</div>-->
+          <!--<div class="com-content">-->
+            <!--使用了一周整体不错，主要是为了看纪录片和足球。装在窗户上有种大鱼缸的感觉哈！清晰度不错色彩也可以，应该说对得起2200的价格！还送了五年乐视会员，看英超所有比赛都free，但乐观乐视内容这块还不太丰富，应为家里也有百事通bestv和小米盒子，比较了下，电影百事通最好，纪录片小米最好，只有体育这块乐视比那两家好，还要多努力啊！电视本身有个不足，音响太差，太山寨了！而且不支持3.5mm接口或红白莲音频输出，害得我折腾半天，必须买光纤音频线-->
+          <!--</div>-->
+        </li>
+      </ul>
+      <div class="more">
+        <a href="#" class="morein">查看更多评价</a>
+      </div>
+    </div>
+  <!--</div>-->
+</section>
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+
+<script id="tplstr" type="text/html">
+  {{each result as item index}}
+  <div class="product-list-title">
+    <a href="index.html" class="list-title1">首页</a>
+    >
+    <a href="productlist.html?categoryId=4&category=DVD&pageid=1" class="list-title2"></a>
+    >
+    <a href="#" class="list-title3"></a>
+    <a href="#" class="select">筛选</a>
+  </div>
+  <div class="product-bijia">
+    <div class="product-name">{{item.productName}}</div>
+    <div class="product-img">
+      {{#item.productImg}}
+    </div>
+    <div class="product-collect">
+      <a href="javascript:setfav(473088);">
+      <img src="images/sc.jpg" alt="">
+      </a>
+    </div>
+    </div>
+    <div class="tab">
+      <ul>
+        <li class="cur">
+          <a href="#">比价购买</a>
+        </li>
+        <li class="mtab">
+          <a href="#">产品参数</a>
+        </li>
+        <li>
+          <a href="#">评价(2322)</a>
+        </li>
+      </ul>
+    </div>
+    <div class="plist">
+      <a href="#">
+        {{#item.bjShop}}
+      </a>
+      <div class="note">
+        * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+      </div>
+    </div>
+    <div class="product-com-title">
+      <div>网友评价</div>
+    </div>
+  <div class="product-com-list">
+    <div class="ping">
+      <ul>
+
+      </ul>
+    </div>
+    <div class="more">
+      <a href="javascript:;" class="morein">查看更多评价</a>
+    </div>
+  </div>
+
+  {{/each}}
+
+</script>
+
+
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+    <li>
+      <div class="clearfix">
+        <span class="pull-left com-name">{{item.comName}}</span>
+        <span class="pull-right com-time">{{item.comTime}}</span>
+      </div>
+      <div class="clearfix">
+        <span class="pull-right com-from">{{item.comFrom}}</span>
+      </div>
+      <div class="com-content">
+        {{item.comContent}}
+      </div>
+    </li>
+  {{/each}}
+</script>
+
+
+
+<!--3请求数据-->
+<script>
+  $(function () {
+
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+//    console.log(obj);
+//    console.log(obj.category);
+
+
+
+    $.ajax({
+      url:Route.baseUrl + '/api/getproduct',
+      data:obj,
+      success:function(data){
+        var tplstr = template('tplstr',data);
+        $('.product-bijia').html(tplstr);
+        var dat = data.result[0];
+        var da = dat.productName
+        var cate = dat.categoryId
+        var str = da.split(' ')[0];
+        var shu = decodeURI(obj.category);
+        $('.list-title2').html(shu);
+        $('.list-title2').attr('href','productlist.html?categoryId='+cate+'&category='+shu+'&pageid=1')
+        $('.list-title3').html(str);
+      }
+    })
+    $.ajax({
+      url:Route.baseUrl +'/api/getproductcom',
+      data:obj,
+      success:function (data) {
+          var tpl = template('tpl',data);
+        $('.product-com-list .ping ul').html(tpl);
+      }
+    })
+
+  })
+
+
+
+
+
+</script>
+
+

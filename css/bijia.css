@@ -1,0 +1,244 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+.product-bijia .product-list-title {
+  height: 0.79998rem;
+  background-color: #ebebeb;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ccc;
+  line-height: 0.79998rem;
+  padding-left: 0.106664rem;
+}
+[data-dpr='1'] .product-bijia .product-list-title {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .product-list-title {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .product-list-title {
+  font-size: 48px;
+}
+.product-bijia .product-list-title a {
+  color: #000;
+  text-decoration: none;
+}
+.product-bijia .product-list-title .select {
+  float: right;
+  margin-right: 0.159996rem;
+  display: block;
+  height: 0.599985rem;
+  line-height: 0.599985rem;
+  background-color: #d0d0d0;
+  padding: 0 0.346658rem;
+  margin-top: 0.066665rem;
+  border-radius: 0.13333rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ebebeb), to(#ffffff));
+}
+.product-bijia .product-bijia {
+  position: relative;
+}
+.product-bijia .product-bijia .product-name {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 0.26666rem;
+}
+[data-dpr='1'] .product-bijia .product-bijia .product-name {
+  font-size: 20px;
+}
+[data-dpr='2'] .product-bijia .product-bijia .product-name {
+  font-size: 40px;
+}
+[data-dpr="3"] .product-bijia .product-bijia .product-name {
+  font-size: 60px;
+}
+.product-bijia .product-bijia .product-img {
+  display: block;
+  width: 2.26661rem;
+  height: 2.26661rem;
+  margin: 0px auto;
+}
+.product-bijia .product-bijia .product-img img {
+  width: 100%;
+  height: 100%;
+}
+.product-bijia .product-bijia .product-collect {
+  float: right;
+  margin-right: 0.319992rem;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.product-bijia .product-bijia .product-collect a {
+  text-decoration: none;
+  color: #000;
+}
+.product-bijia .product-bijia .product-collect a img {
+  width: 0.79998rem;
+  height: 0.79998rem;
+}
+.product-bijia .tab {
+  width: 100%;
+  margin-top: 0.26666rem;
+  height: 0.853312rem;
+  line-height: 0.853312rem;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #ffbb00;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd050), to(#ffbb00));
+}
+[data-dpr='1'] .product-bijia .tab {
+  font-size: 18px;
+}
+[data-dpr='2'] .product-bijia .tab {
+  font-size: 36px;
+}
+[data-dpr="3"] .product-bijia .tab {
+  font-size: 54px;
+}
+.product-bijia .tab li.cur {
+  background-color: #ffbb00;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffa632), to(#ff9000));
+}
+.product-bijia .tab li {
+  box-sizing: border-box;
+  float: left;
+  width: 33.33%;
+  height: 0.853312rem;
+  text-align: center;
+}
+.product-bijia .tab li a {
+  color: #fff;
+  display: block;
+  height: 0.853312rem;
+  width: 100%;
+}
+.product-bijia .tab li.mtab {
+  border-left: solid 1px #c14d00;
+  border-right: solid 1px #c14d00;
+}
+.product-bijia .plist {
+  height: 1.3333rem;
+}
+.product-bijia .plist a {
+  display: block;
+  height: 0.79998rem;
+  background-color: pink;
+}
+.product-bijia .plist a table tr td:nth-child(1) {
+  text-align: center;
+  line-height: 0.293326rem;
+}
+.product-bijia .plist a table tr td:nth-child(3) {
+  text-align: right;
+  color: red;
+  padding-right: 0.26666rem;
+}
+[data-dpr='1'] .product-bijia .plist a table tr td:nth-child(3) {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .plist a table tr td:nth-child(3) {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .plist a table tr td:nth-child(3) {
+  font-size: 48px;
+}
+.product-bijia .plist .note {
+  color: #888;
+  padding: 0.106664rem 0.13333rem;
+  line-height: 0.239994rem;
+}
+[data-dpr='1'] .product-bijia .plist .note {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .plist .note {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .plist .note {
+  font-size: 48px;
+}
+.product-bijia .product-com-title {
+  border-top: 5px solid #7a7a7a;
+  margin-top: 0.199995rem;
+}
+.product-bijia .product-com-title div {
+  height: 0.719982rem;
+  line-height: 0.719982rem;
+  text-align: center;
+  overflow: hidden;
+  background: #dbdbdb;
+  border-top: 1px solid #fff;
+}
+[data-dpr='1'] .product-bijia .product-com-title div {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .product-com-title div {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .product-com-title div {
+  font-size: 48px;
+}
+.product-bijia .product-com-list ul li {
+  color: #666;
+  padding: 0.13333rem;
+  border-bottom: 1px solid #ccc;
+}
+[data-dpr='1'] .product-bijia .product-com-list ul li {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .product-com-list ul li {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .product-com-list ul li {
+  font-size: 48px;
+}
+.product-bijia .product-com-list ul li .clearfix {
+  padding: 0.13333rem 0;
+}
+.product-bijia .product-com-list ul li .pull-left {
+  float: left;
+}
+.product-bijia .product-com-list ul li .pull-right {
+  float: right;
+}
+.product-bijia .product-com-list ul li .com-content {
+  color: #000;
+}
+[data-dpr='1'] .product-bijia .product-com-list ul li .com-content {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .product-com-list ul li .com-content {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .product-com-list ul li .com-content {
+  font-size: 48px;
+}
+.product-bijia .product-com-list .more {
+  padding: 0 0.106664rem;
+  margin-top: 0.213328rem;
+}
+.product-bijia .product-com-list .more .morein {
+  display: block;
+  height: 0.693316rem;
+  background-color: #d4d4d4;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#d4d4d4));
+  border-bottom: 1px solid #bababa;
+  box-shadow: 0 0 1px #666;
+  border-radius: 0.066665rem;
+  text-align: center;
+  line-height: 0.693316rem;
+  overflow: hidden;
+  color: #000;
+  text-decoration: none;
+}
+[data-dpr='1'] .product-bijia .product-com-list .more .morein {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-bijia .product-com-list .more .morein {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-bijia .product-com-list .more .morein {
+  font-size: 48px;
+}

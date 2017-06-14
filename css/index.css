@@ -1,0 +1,340 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+.header {
+  background-color: #FF841D;
+  box-sizing: border-box;
+  padding: 0.159996rem;
+}
+.header .fb-header .right {
+  float: right;
+  width: 0.66665rem;
+  height: 0.66665rem;
+}
+.header .fb-header .right a img {
+  width: 0.66665rem;
+  height: 0.66665rem;
+}
+.header .fb-header .left {
+  height: 0.66665rem;
+  overflow: hidden;
+}
+.header .fb-header .left a img {
+  height: 0.66665rem;
+}
+.fb-section {
+  line-height: 1.173304rem;
+  color: black;
+}
+[data-dpr='1'] .fb-section {
+  font-size: 16px;
+}
+[data-dpr='2'] .fb-section {
+  font-size: 32px;
+}
+[data-dpr="3"] .fb-section {
+  font-size: 48px;
+}
+.fb-section .section {
+  height: 1.3333rem;
+}
+.fb-section .section .right {
+  float: right;
+  width: 1.99995rem;
+  height: 1.3333rem;
+  opacity: 0.2;
+  padding-right: 0.26666rem;
+}
+.fb-section .section .right input {
+  height: 0.853312rem;
+  width: 90%;
+  background-color: #FF841D;
+  text-align: center;
+  color: #fff;
+  border-radius: 0.39999rem;
+}
+.fb-section .section .left {
+  height: 1.3333rem;
+  overflow: hidden;
+  padding-left: 0.26666rem;
+  border-radius: 0.39999rem;
+}
+.fb-section .section .left input {
+  height: 0.839979rem;
+  width: 95%;
+  background-color: #F1F1F1;
+  padding-left: 0.26666rem;
+}
+.fb-menu {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: #F1F1F1;
+}
+.fb-menu .menu {
+  background-color: #fff;
+  padding: 0.13333rem;
+}
+.fb-menu .menu ul {
+  margin-top: 0.39999rem;
+}
+.fb-menu .menu ul li {
+  float: left;
+  width: 25%;
+  padding-top: 0.159996rem;
+}
+.fb-menu .menu ul li a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.fb-menu .menu ul li a img {
+  width: 1.3333rem;
+  display: block;
+  margin: 0 auto;
+}
+.fb-menu .menu ul li a p {
+  text-align: center;
+  padding-top: 0.159996rem;
+}
+[data-dpr='1'] .fb-menu .menu ul li a p {
+  font-size: 16px;
+}
+[data-dpr='2'] .fb-menu .menu ul li a p {
+  font-size: 32px;
+}
+[data-dpr="3"] .fb-menu .menu ul li a p {
+  font-size: 48px;
+}
+.recommen {
+  height: 0.93331rem;
+  background-color: #FF9E23;
+  padding: 0 0.199995rem;
+}
+.recommen .box span {
+  height: 0.93331rem;
+  line-height: 0.93331rem;
+  color: #fff;
+}
+[data-dpr='1'] .recommen .box span {
+  font-size: 16px;
+}
+[data-dpr='2'] .recommen .box span {
+  font-size: 32px;
+}
+[data-dpr="3"] .recommen .box span {
+  font-size: 48px;
+}
+.recommen .box img {
+  width: 0.466655rem;
+  height: 0.466655rem;
+  margin-top: 0.199995rem;
+}
+.recommen-product .list ul li {
+  height: 3.439914rem;
+  padding: 0.186662rem 0.106664rem;
+}
+.recommen-product .list ul li a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.recommen-product .list ul li a .pic {
+  width: 3.06659rem;
+  height: 100%;
+}
+.recommen-product .list ul li a .pic img {
+  width: 2.79993rem;
+}
+.recommen-product .list ul li a .info {
+  padding-left: 3.06659rem;
+  height: 100%;
+}
+.recommen-product .list ul li a .info .top {
+  height: 50%;
+  width: 100%;
+}
+.recommen-product .list ul li a .info .top span:nth-child(1) {
+  color: #000;
+  font-weight: 700;
+}
+[data-dpr='1'] .recommen-product .list ul li a .info .top span:nth-child(1) {
+  font-size: 16px;
+}
+[data-dpr='2'] .recommen-product .list ul li a .info .top span:nth-child(1) {
+  font-size: 32px;
+}
+[data-dpr="3"] .recommen-product .list ul li a .info .top span:nth-child(1) {
+  font-size: 48px;
+}
+.recommen-product .list ul li a .info .top span:nth-child(2) {
+  color: #FF5F17;
+}
+[data-dpr='1'] .recommen-product .list ul li a .info .top span:nth-child(2) {
+  font-size: 16px;
+}
+[data-dpr='2'] .recommen-product .list ul li a .info .top span:nth-child(2) {
+  font-size: 32px;
+}
+[data-dpr="3"] .recommen-product .list ul li a .info .top span:nth-child(2) {
+  font-size: 48px;
+}
+.recommen-product .list ul li a .info .bottom {
+  height: 50%;
+  color: #B1A3A1;
+  padding-top: 0.426656rem;
+}
+[data-dpr='1'] .recommen-product .list ul li a .info .bottom {
+  font-size: 16px;
+}
+[data-dpr='2'] .recommen-product .list ul li a .info .bottom {
+  font-size: 32px;
+}
+[data-dpr="3"] .recommen-product .list ul li a .info .bottom {
+  font-size: 48px;
+}
+.recommen-product .list .more-bar {
+  height: 1.133305rem;
+  padding: 0.26666rem 0.26666rem 0;
+}
+.recommen-product .list .more-bar a {
+  display: block;
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.213328rem;
+  text-align: center;
+  line-height: 0.866645rem;
+  color: #000;
+  text-decoration: none;
+}
+[data-dpr='1'] .recommen-product .list .more-bar a {
+  font-size: 16px;
+}
+[data-dpr='2'] .recommen-product .list .more-bar a {
+  font-size: 32px;
+}
+[data-dpr="3"] .recommen-product .list .more-bar a {
+  font-size: 48px;
+}
+.list-title {
+  padding-top: 0.26666rem;
+  background-color: #F1F1F1;
+}
+.list-title .box {
+  height: 0.93331rem;
+  background-color: #FF9F23;
+  padding: 0 0.199995rem;
+}
+.list-title .box span {
+  height: 0.93331rem;
+  line-height: 0.93331rem;
+  color: #fff;
+}
+[data-dpr='1'] .list-title .box span {
+  font-size: 16px;
+}
+[data-dpr='2'] .list-title .box span {
+  font-size: 32px;
+}
+[data-dpr="3"] .list-title .box span {
+  font-size: 48px;
+}
+.list-title .box img {
+  width: 0.466655rem;
+  height: 0.466655rem;
+  margin-top: 0.199995rem;
+}
+.footer .top {
+  padding-top: 0.66665rem;
+  background-color: #F1F1F1;
+}
+.footer .top a:nth-child(1) {
+  display: block;
+  width: 30%;
+  float: left;
+  height: 0.893311rem;
+  text-align: center;
+  line-height: 0.893311rem;
+  background-color: #F1F1F1;
+  color: #000;
+}
+[data-dpr='1'] .footer .top a:nth-child(1) {
+  font-size: 22px;
+}
+[data-dpr='2'] .footer .top a:nth-child(1) {
+  font-size: 44px;
+}
+[data-dpr="3"] .footer .top a:nth-child(1) {
+  font-size: 66px;
+}
+.footer .top a:nth-child(2) {
+  display: block;
+  width: 30%;
+  background-color: #F1F1F1;
+  float: left;
+  height: 0.893311rem;
+  text-align: center;
+  line-height: 0.893311rem;
+  color: #000;
+}
+[data-dpr='1'] .footer .top a:nth-child(2) {
+  font-size: 22px;
+}
+[data-dpr='2'] .footer .top a:nth-child(2) {
+  font-size: 44px;
+}
+[data-dpr="3"] .footer .top a:nth-child(2) {
+  font-size: 66px;
+}
+.footer .top a:nth-child(3) {
+  display: block;
+  width: 40%;
+  background-color: #F1F1F1;
+  float: left;
+  height: 0.893311rem;
+  text-align: center;
+  line-height: 0.893311rem;
+  color: #000;
+}
+[data-dpr='1'] .footer .top a:nth-child(3) {
+  font-size: 22px;
+}
+[data-dpr='2'] .footer .top a:nth-child(3) {
+  font-size: 44px;
+}
+[data-dpr="3"] .footer .top a:nth-child(3) {
+  font-size: 66px;
+}
+.footer .top a:nth-child(3) img {
+  width: 0.39999rem;
+  height: 0.39999rem;
+}
+.footer .mft-msg {
+  padding: 0.53332rem;
+}
+.footer .mft-msg p {
+  text-align: center;
+  color: #666;
+}
+[data-dpr='1'] .footer .mft-msg p {
+  font-size: 12px;
+}
+[data-dpr='2'] .footer .mft-msg p {
+  font-size: 24px;
+}
+[data-dpr="3"] .footer .mft-msg p {
+  font-size: 36px;
+}
+.footer .mft-msg a {
+  color: #666;
+}
+[data-dpr='1'] .footer .mft-msg a {
+  font-size: 12px;
+}
+[data-dpr='2'] .footer .mft-msg a {
+  font-size: 24px;
+}
+[data-dpr="3"] .footer .mft-msg a {
+  font-size: 36px;
+}

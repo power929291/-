@@ -1,0 +1,86 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+/* header 公共顶部栏  */
+.header {
+  background-color: #FF841D;
+  box-sizing: border-box;
+  padding: 0.079998rem;
+  height: 0.66665rem;
+}
+.header .head .back {
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.header .head .back a {
+  color: #fff;
+}
+[data-dpr='1'] .header .head .back a {
+  font-size: 30px;
+}
+[data-dpr='2'] .header .head .back a {
+  font-size: 60px;
+}
+[data-dpr="3"] .header .head .back a {
+  font-size: 90px;
+}
+.header .head h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+.cu-friend {
+  background-color: #fff;
+  text-align: left;
+  margin: 0 auto;
+}
+[data-dpr='1'] .cu-friend {
+  font-size: 16px;
+}
+[data-dpr='2'] .cu-friend {
+  font-size: 32px;
+}
+[data-dpr="3"] .cu-friend {
+  font-size: 48px;
+}
+.cu-friend ul {
+  display: table;
+  width: 100%;
+  padding: 0 0px 10px 0;
+}
+.cu-friend ul .border-img {
+  float: left;
+  padding: 0.39999rem 0 0 0.13333rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 50%;
+  border: 1px solid #eeeeee;
+}
+.cu-friend ul .border-img a {
+  display: block;
+  text-decoration: none;
+}
+.cu-friend ul .border-img a .img img {
+  width: 2.6666rem;
+  height: 2.6666rem;
+}
+.cu-friend ul .border-img a .title {
+  color: #000;
+  padding-left: 0.13333rem;
+  text-align: left;
+}
+.cu-friend ul .border-img a .subtit {
+  text-align: left;
+  padding: 0.199995rem 0 0 0.13333rem;
+  color: #ff6c00;
+}
+.cu-friend ul .border-img a .info {
+  text-align: left;
+  padding: 0.199995rem 0 0.13333rem 0.13333rem;
+  color: #a1a1a1;
+}

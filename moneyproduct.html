@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/moneyproduct.css"/>
+</head>
+
+<body>
+<header id="header" class="header">
+  <div id="ctl00_headerApp" class="head">
+    <div class="back">
+      <a href="moneyctrl.html"></a>
+    </div>
+    <h1>
+      国内折扣
+    </h1>
+    <div class="home">
+      <a href="javascript:;" class="icon-app"></a>
+    </div>
+  </div>
+</header>
+<main id="recommen-product" class="money-product">
+    <!--<div class="container">-->
+      <!--<div class="cu-content">-->
+        <!--<h3 class="title">移动端凑单品：海天 鲜味 生抽 1.28L</h3>-->
+        <!--&lt;!&ndash;<h4>{{value.productPrice}}</h4>&ndash;&gt;-->
+        <!--<div class="info">-->
+          <!--<span class="mall">京东商城</span> <span class="addtime" style="margin-right: 4px;">10-25 14:10</span>-->
+          <!--<span class="author">小编烟火 / 慢慢买</span>-->
+        <!--</div>-->
+        <!--<div class="content clearfix">-->
+          <!--<div class="picwrap">-->
+            <!--<img src="images/1.jpg" alt="移动端凑单品：海天 鲜味 生抽 1.28L">-->
+          <!--</div>-->
+          <!--<div class="conn">-->
+            <!--&lt;!&ndash;内容开始&ndash;&gt;-->
+            <!--<p>海天的金标生抽酱油，采用了非转基因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味料，当然也能用作白切系列的蘸酱调料，相信吃过美味鲜的慢友们都了解的。</p>-->
+            <!--&lt;!&ndash;<p>{{#value.productImg}}</p>&ndash;&gt;-->
+            <!--<p>目前京东商城移动端售价10.9元，不错的凑单品，刚需可入，规格1.28L。</p>-->
+            <!--&lt;!&ndash;<p>{{#value.productInfo3}}</p>&ndash;&gt;-->
+            <!--<p>-->
+              <!--<img src="images/2.jpg" alt="移动端凑单品：海天 鲜味 生抽 1.28L">-->
+            <!--</p>-->
+            <!--&lt;!&ndash;<p>{{#value.productImg3}}</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;内容结束&ndash;&gt;-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<center>-->
+          <!--<div class="area">-->
+            <!--<span class="s">-->
+              <!--<a href="javascript:;" style=" display:block;">-->
+                <!--<font id="fqy">广东</font>-->
+                <!--<i class="iconfont">+</i>-->
+              <!--</a>-->
+              <!--<div class="drop" style="display: block;">-->
+                <!--<ul class="disstorck">-->
+                  <!--<li>-->
+                    <!--<a href="#" onclick="setdiqu('北京','有货')">-->
+                      <!--<span>-->
+                        <!--北京-->
+                        <!--<strong>有货</strong>-->
+                      <!--</span>-->
+                    <!--</a>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</div>-->
+            <!--</span>-->
+            <!--<strong id="fqy_yh" style=" display:block;">有货</strong>-->
+          <!--</div>-->
+        <!--</center>-->
+        <!--<div class="golink">-->
+          <!--<a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank">-->
+            <!--<i class="icon-gobuy"></i>-->
+            <!--前往购买-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div style="text-align: center; margin: 20px 10px;">-->
+        <!--<img src="images/mmbweixin2.png" style="width: 100%; height: auto;">-->
+      <!--</div>-->
+      <!--<div class="cu-content-pl ui-border-t">-->
+        <!--<div class="tit">发表评论</div>-->
+        <!--<div class="reply">-->
+          <!--<div class="form"></div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+</main>
+<footer id="ctl00_foot">
+  <div class="foot_top">
+    <a href="javascript:;">登录</a>
+    <a href="javascript:;">注册</a>
+    <a href="#" style="width: 40%; border: 0;">
+      <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+    </a>
+  </div>
+  <div class="footer">
+    <p>
+      <a href="javascript:;" style="color: Red;">手机APP下载</a>
+      <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+<script id="moneyProduct" type="text/html">
+  {{each result as value i}}
+  <div class="container">
+    <div class="cu-content">
+      <h3 class="title">
+        {{value.productName}}</h3>
+      <h4>{{value.productPrice}}</h4>
+      <div class="info">
+        <span class="mall">{{value.productFrom}}</span> <span class="addtime" style="margin-right: 4px;">{{value.productTime}}</span>
+        <span class="author">{{value.productTips}}</span>
+      </div>
+      <div class="content clearfix">
+        <div class="picwrap">
+          {{#value.productImgSm}}</div>
+        <div class="conn">
+          <!--内容开始-->
+          <p>{{value.productInfo}}</p>
+          <p>{{#value.productImg}}</p>
+          <p>{{#value.productInfo1}}</p>
+          <p>{{#value.productInfo3}}</p>
+          <p>{{#value.productImg2}}</p>
+          <p>{{#value.productImg3}}</p>
+          <!--内容结束-->
+        </div>
+      </div>
+      <center>
+        <div class="area"><span class="s"><a href="javascript:;" style=" display:none;"><font>广东</font><i class="iconfont">+</i></a>
+              			<div class="drop" style="display: block;">
+                      {{#value.productCity}}
+                    </div>
+                    </span><strong style=" display:none;">有货</strong> </div>
+      </center>
+      <div class="golink">
+        <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+    </div>
+    <div style="text-align: center; margin: 20px 10px;">
+      <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+    </div>
+    <div class="cu-content-pl ui-border-t">
+      {{#value.productComment}}
+    </div>
+  </div>
+  {{/each}}
+</script>
+
+<!--3请求数据-->
+
+<script>
+
+  $(function(){
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+
+    $.ajax({
+      url:Route.baseUrl + '/api/getmoneyctrlproduct',
+      data:obj,
+      success:function (data) {
+        var tplstr = template('moneyProduct',data);
+//        console.log(tplstr);
+        $('#recommen-product').html(tplstr);
+      }
+    })
+  })
+
+</script>
+
+

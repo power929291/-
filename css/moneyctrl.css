@@ -1,0 +1,140 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+/* header 公共顶部栏  */
+.header {
+  background-color: #FF841D;
+  box-sizing: border-box;
+  padding: 0.079998rem;
+  height: 0.66665rem;
+}
+.header .head .back {
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.header .head .back a {
+  color: #fff;
+}
+[data-dpr='1'] .header .head .back a {
+  font-size: 30px;
+}
+[data-dpr='2'] .header .head .back a {
+  font-size: 60px;
+}
+[data-dpr="3"] .header .head .back a {
+  font-size: 90px;
+}
+.header .head h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+.money-ctrl ul li {
+  height: 3.439914rem;
+  padding: 0.186662rem 0.106664rem;
+}
+.money-ctrl ul li a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+.money-ctrl ul li a .pic {
+  width: 3.06659rem;
+  height: 100%;
+}
+.money-ctrl ul li a .pic img {
+  width: 2.79993rem;
+}
+.money-ctrl ul li a .info {
+  padding-left: 3.06659rem;
+  height: 100%;
+}
+.money-ctrl ul li a .info .top {
+  height: 50%;
+  width: 100%;
+}
+.money-ctrl ul li a .info .top span:nth-child(1) {
+  color: #000;
+  font-weight: 700;
+}
+[data-dpr='1'] .money-ctrl ul li a .info .top span:nth-child(1) {
+  font-size: 16px;
+}
+[data-dpr='2'] .money-ctrl ul li a .info .top span:nth-child(1) {
+  font-size: 32px;
+}
+[data-dpr="3"] .money-ctrl ul li a .info .top span:nth-child(1) {
+  font-size: 48px;
+}
+.money-ctrl ul li a .info .top span:nth-child(2) {
+  color: #FF5F17;
+}
+[data-dpr='1'] .money-ctrl ul li a .info .top span:nth-child(2) {
+  font-size: 16px;
+}
+[data-dpr='2'] .money-ctrl ul li a .info .top span:nth-child(2) {
+  font-size: 32px;
+}
+[data-dpr="3"] .money-ctrl ul li a .info .top span:nth-child(2) {
+  font-size: 48px;
+}
+.money-ctrl ul li a .info .bottom {
+  height: 50%;
+  color: #B1A3A1;
+  padding-top: 0.426656rem;
+}
+[data-dpr='1'] .money-ctrl ul li a .info .bottom {
+  font-size: 16px;
+}
+[data-dpr='2'] .money-ctrl ul li a .info .bottom {
+  font-size: 32px;
+}
+[data-dpr="3"] .money-ctrl ul li a .info .bottom {
+  font-size: 48px;
+}
+.money-ctrl .page {
+  padding-top: 0.26666rem;
+}
+.money-ctrl .page .w33 {
+  width: 33.33%;
+  height: 0.79998rem;
+  float: left;
+  text-align: center;
+}
+.money-ctrl .page .w33 a {
+  background-color: #d4d4d4;
+  padding: 0.159996rem 0.26666rem;
+  text-align: center;
+  line-height: 0.66665rem;
+  border-radius: 0.13333rem;
+  color: #000;
+  text-decoration: none;
+}
+[data-dpr='1'] .money-ctrl .page .w33 a {
+  font-size: 16px;
+}
+[data-dpr='2'] .money-ctrl .page .w33 a {
+  font-size: 32px;
+}
+[data-dpr="3"] .money-ctrl .page .w33 a {
+  font-size: 48px;
+}
+.money-ctrl .page .two .select {
+  display: inline-block;
+  padding: 0.119997rem 0.26666rem;
+  text-align: center;
+}
+[data-dpr='1'] .money-ctrl .page .two .select {
+  font-size: 16px;
+}
+[data-dpr='2'] .money-ctrl .page .two .select {
+  font-size: 32px;
+}
+[data-dpr="3"] .money-ctrl .page .two .select {
+  font-size: 48px;
+}

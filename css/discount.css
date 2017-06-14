@@ -1,0 +1,146 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+/* header 公共顶部栏  */
+.header {
+  background-color: #FF841D;
+  box-sizing: border-box;
+  padding: 0.079998rem;
+  height: 0.66665rem;
+}
+.header .head .back {
+  width: 50px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.header .head .back a {
+  color: #fff;
+}
+[data-dpr='1'] .header .head .back a {
+  font-size: 30px;
+}
+[data-dpr='2'] .header .head .back a {
+  font-size: 60px;
+}
+[data-dpr="3"] .header .head .back a {
+  font-size: 90px;
+}
+.header .head h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+.container .cu-content {
+  padding: 0.199995rem 0.26666rem;
+  background-color: #fff;
+}
+.container .cu-content h3 {
+  margin: 0.26666rem auto 0.199995rem auto;
+  font-weight: 800;
+}
+[data-dpr='1'] .container .cu-content h3 {
+  font-size: 22px;
+}
+[data-dpr='2'] .container .cu-content h3 {
+  font-size: 44px;
+}
+[data-dpr="3"] .container .cu-content h3 {
+  font-size: 66px;
+}
+.container .cu-content h4 {
+  color: #ff6c00;
+  font-weight: 700;
+  margin: 0.199995rem auto;
+}
+.container .cu-content .info {
+  height: 0.53332rem;
+}
+.container .cu-content .info span {
+  color: #999;
+}
+[data-dpr='1'] .container .cu-content .info span {
+  font-size: 12px;
+}
+[data-dpr='2'] .container .cu-content .info span {
+  font-size: 24px;
+}
+[data-dpr="3"] .container .cu-content .info span {
+  font-size: 36px;
+}
+.container .cu-content .content .picwrap {
+  float: right;
+  width: 1.3333rem;
+}
+.container .cu-content .content .picwrap img {
+  width: 1.3333rem;
+  height: 1.3333rem;
+}
+.container .cu-content .content .conn {
+  margin: 0.13333rem 0;
+}
+.container .cu-content .content .conn p {
+  margin-top: 0.13333rem;
+}
+[data-dpr='1'] .container .cu-content .content .conn p {
+  font-size: 16px;
+}
+[data-dpr='2'] .container .cu-content .content .conn p {
+  font-size: 32px;
+}
+[data-dpr="3"] .container .cu-content .content .conn p {
+  font-size: 48px;
+}
+.container .golink a {
+  background-color: #FF9000;
+  display: block;
+  height: 0.79998rem;
+  text-align: center;
+  color: #fff;
+  line-height: 0.79998rem;
+  margin: 0.13333rem 0.26666rem;
+  border-radius: 0.13333rem;
+}
+[data-dpr='1'] .container .golink a {
+  font-size: 16px;
+}
+[data-dpr='2'] .container .golink a {
+  font-size: 32px;
+}
+[data-dpr="3"] .container .golink a {
+  font-size: 48px;
+}
+.container .cu-content-pl .tit {
+  height: 0.466655rem;
+  background-color: #fff;
+  line-height: 0.466655rem;
+  padding-left: 0.13333rem;
+}
+[data-dpr='1'] .container .cu-content-pl .tit {
+  font-size: 16px;
+}
+[data-dpr='2'] .container .cu-content-pl .tit {
+  font-size: 32px;
+}
+[data-dpr="3"] .container .cu-content-pl .tit {
+  font-size: 48px;
+}
+.container .cu-content-pl .reply .form {
+  border: 1px solid #ccc;
+}
+.container .cu-content-pl .reply .form textarea {
+  width: 100%;
+}
+.container .cu-content-pl .reply .form .ctrl {
+  text-align: right;
+  height: 0.66665rem;
+}
+.container .cu-content-pl .reply .form .ctrl input {
+  padding: 0.199995rem 0.39999rem;
+  background-color: #ff841d;
+  border-radius: 0.066665rem;
+  color: #fff;
+}

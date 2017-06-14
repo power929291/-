@@ -1,0 +1,154 @@
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+.product-list .product-list-title {
+  height: 0.79998rem;
+  background-color: #ebebeb;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ccc;
+  line-height: 0.79998rem;
+  padding-left: 0.106664rem;
+}
+[data-dpr='1'] .product-list .product-list-title {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-list .product-list-title {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-list .product-list-title {
+  font-size: 48px;
+}
+.product-list .product-list-title a {
+  color: #000;
+  text-decoration: none;
+}
+.product-list .product-list-title .select {
+  float: right;
+  margin-right: 0.159996rem;
+  display: block;
+  height: 0.599985rem;
+  line-height: 0.599985rem;
+  background-color: #d0d0d0;
+  padding: 0 0.346658rem;
+  margin-top: 0.066665rem;
+  border-radius: 0.13333rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ebebeb), to(#ffffff));
+}
+.product-list .product {
+  background-color: #fff;
+}
+.product-list .product ul li {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0.53332rem;
+}
+.product-list .product ul li a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+.product-list .product ul li .pic {
+  float: left;
+  width: 2.79993rem;
+}
+.product-list .product ul li .pic img {
+  width: 1.59996rem;
+  height: 1.59996rem;
+}
+.product-list .product ul li .info {
+  line-height: 0.319992rem;
+  padding-left: 2.79993rem;
+}
+[data-dpr='1'] .product-list .product ul li .info {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-list .product ul li .info {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-list .product ul li .info {
+  font-size: 48px;
+}
+.product-list .product ul li .info .tit {
+  color: #333333;
+  line-height: 0.293326rem;
+  min-height: 0.586652rem;
+  word-break: break-all;
+}
+.product-list .product ul li .info .price {
+  height: 0.333325rem;
+  margin-top: 0.053332rem;
+}
+.product-list .product ul li .info .price em {
+  color: #ea3900;
+  vertical-align: middle;
+  float: left;
+}
+[data-dpr='1'] .product-list .product ul li .info .price em {
+  font-size: 18px;
+}
+[data-dpr='2'] .product-list .product ul li .info .price em {
+  font-size: 36px;
+}
+[data-dpr="3"] .product-list .product ul li .info .price em {
+  font-size: 54px;
+}
+.product-list .product ul li .info .other {
+  color: #a1a1a1;
+  font-size: 0.159996rem;
+}
+.product-list .product ul li .info .other em {
+  font-style: normal;
+  margin-right: 10px;
+}
+.product-list .product .page {
+  text-align: center;
+  margin-top: 0.13333rem;
+}
+.product-list .product .page .w33 {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+.product-list .product .page .w33 a {
+  background-color: #d4d4d4;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#d4d4d4));
+  border-bottom: 1px solid #bababa;
+  border-radius: 0.066665rem;
+  text-align: center;
+  line-height: 0.426656rem;
+  overflow: hidden;
+  padding: 0.199995rem 0.26666rem;
+  color: #000;
+  text-decoration: none;
+}
+[data-dpr='1'] .product-list .product .page .w33 a {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-list .product .page .w33 a {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-list .product .page .w33 a {
+  font-size: 48px;
+}
+.product-list .product .page span:nth-child(2) select {
+  border: 1px solid #ccc;
+  padding: 0.066665rem 0.199995rem;
+  height: 0.66665rem;
+}
+[data-dpr='1'] .product-list .product .page span:nth-child(2) select {
+  font-size: 16px;
+}
+[data-dpr='2'] .product-list .product .page span:nth-child(2) select {
+  font-size: 32px;
+}
+[data-dpr="3"] .product-list .product .page span:nth-child(2) select {
+  font-size: 48px;
+}
+.product-list .product .page .clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

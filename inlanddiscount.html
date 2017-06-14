@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/inlanddiscount.css">
+</head>
+<body>
+<section id="header" class="header">
+  <div class="head">
+    <div class="back">
+      <a href="index.html" class="iconfont">&#xe697;</a>
+    </div>
+    <h1>国内折扣</h1>
+    <div class="home">
+      <a href="javascript:;"></a>
+    </div>
+  </div>
+</section>
+<section class="recommen-product cu-friend">
+  <ul>
+    <!--<li class="border-img">-->
+      <!--<a href="discount.html?productid=0" title="《皮囊》 19.9元">-->
+        <!--<div class="img">-->
+          <!--<img src="images/55d.jpg" alt="西域美农新疆特产五星和田红枣250g*2">-->
+        <!--</div>-->
+        <!--<div class="title">西域美农新疆特产五星和田红枣250g*2</div>-->
+        <!--<div class="subtit">19.8元(5件99元)</div>-->
+        <!--<div class="info">-->
+          <!--<span class="mall">京东商城 | 10-22 13:28</span>-->
+        <!--</div>-->
+      <!--</a>-->
+    <!--</li>-->
+  </ul>
+</section>
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+  <li class="border-img">
+    <a href="discount.html?productid={{item.productId}}" title="《皮囊》 19.9元">
+      <div class="img">
+        {{#item.productImg}}
+      </div>
+      <div class="title">{{item.productName}}</div>
+      <div class="subtit">{{item.productPrice}}</div>
+      <div class="info">
+        <span class="mall">{{item.productFrom}} | {{item.productTime}}</span>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+
+</script>
+
+
+<script>
+  $(function () {
+    $.ajax({
+      url:Route.baseUrl + '/api/getinlanddiscount',
+      success:function(data){
+        var tplstr = template('tpl',data);
+        $('.cu-friend ul').html(tplstr);
+      }
+    })
+  })
+
+</script>

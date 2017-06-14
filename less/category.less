@@ -1,0 +1,55 @@
+// 公共模块引入
+@import "px2rem";     // 导入换算 less
+
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+
+
+
+//category
+.category{
+  .row{
+    border-radius: 10*@rem;
+    background: #ededed;
+    border: 1px solid #ccc;
+    .font-size(14);
+    color: #666;
+    .category-title{
+      .pro{
+        >a{
+          display: block;
+          height: 80*@rem;
+          width: 100%;
+          background: url(../images/arrow1.gif) right center no-repeat;
+          line-height: 80*@rem;
+          color: #000;
+          .font-size(16);
+          padding-left: 16*@rem;
+          font-weight: bold;
+          border-bottom: 1px solid #ccc;
+          text-decoration: none;
+        }
+        .category-content{
+          background-color: #fff;
+          >li{
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            width: 33.33%;
+            float: left;
+            text-align: center;
+            height: 78*@rem;
+            line-height: 78*@rem;
+            a{
+              display: block;
+              width: 100%;
+              color: #333;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

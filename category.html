@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+  <section class="category">
+    <div class="row clearfix">
+      <ul class="category-title">
+
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+  <li class="pro">
+    <a href="javascript:void(0)" data-title-id="{{item.titleId}}">{{item.title}}</a>
+    <ul class="category-content clearfix">
+    </ul>
+  </li>
+  {{/each}}
+
+</script>
+
+<script id="tplstr" type="text/html">
+  {{each result as item index}}
+      <li>
+        <a href="productlist.html?categoryId={{item.categoryId}}&category={{item.category}}&pageid=1" data-category-id="{{item.categoryId}}">{{item.category}}</a>
+      </li>
+  {{/each}}
+
+</script>
+
+<script>
+  $(function () {
+    $.ajax({
+      url: Route.baseUrl + '/api/getcategorytitle',
+      success:function(data){
+        var tplstr = template('tpl',data);
+        $('.category-title').html(tplstr);
+
+        var lis = $('.category-title >li>a');
+        $('.category-content').hide();
+
+        lis.on('click',function(){
+            var num = $(this).attr("data-title-id");
+
+
+          $.ajax({
+              url: Route.baseUrl + '/api/getcategory?titleid=' + num,
+              success:function(data){
+                console.log(data);
+                var tplstr = template('tplstr',data);
+                console.log(tplstr);
+                $('.category-content').eq(num).html(tplstr);
+                $('.category-content').eq(num).toggle();
+              }
+          })
+        })
+      }
+    })
+  })
+
+
+</script>

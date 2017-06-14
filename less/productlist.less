@@ -1,0 +1,128 @@
+// 公共模块引入
+@import "px2rem";     // 导入换算 less
+
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+
+
+//product-list
+.product-list{
+  .product-list-title{
+    height: 60*@rem;
+    background-color: #ebebeb;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ccc;
+    line-height: 60*@rem;
+    padding-left: 8*@rem;
+    .font-size(16);
+    a{
+      color: #000;
+      text-decoration: none;
+    }
+    .select{
+      float: right;
+      margin-right: 12*@rem;
+      display: block;
+      height: 45*@rem;
+      line-height: 45*@rem;
+      background-color: #d0d0d0;
+      padding: 0 26*@rem;
+      margin-top: 5*@rem;
+      border-radius: 10*@rem;
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(#ebebeb), to(#ffffff));
+    }
+  }
+  .product{
+    background-color: #fff;
+    ul{
+      li{
+        border-bottom: 1px solid #e7e7e7;
+        padding: 40*@rem;
+        a {
+          display: block;
+          color: #000;
+          text-decoration: none;
+        }
+          .pic{
+            float: left;
+            width: 210*@rem;
+            img{
+              width: 120*@rem;
+              height:120*@rem;
+            }
+          }
+          .info{
+            .font-size(16);
+            line-height: 24*@rem;
+            padding-left: 210*@rem;
+            .tit{
+              color: #333333;
+              line-height: 22*@rem;
+              min-height: 44*@rem;
+              word-break: break-all;
+            }
+            .price{
+              height: 25*@rem;
+              margin-top: 4*@rem;
+              em{
+                .font-size(18);
+                color: #ea3900;
+                vertical-align: middle;
+                float: left;
+              }
+            }
+            .other{
+              color: #a1a1a1;
+              font-size: 12*@rem;
+              em{
+                font-style: normal;
+                margin-right: 10px;
+              }
+            }
+          }
+      }
+    }
+    .page{
+      text-align: center;
+      margin-top: 10*@rem;
+      .w33 {
+        width: 33.33%;
+        float: left;
+        text-align: center;
+        a{
+          background-color: #d4d4d4;
+          background: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#d4d4d4));
+          border-bottom: 1px solid #bababa;
+          border-radius: 5*@rem;
+          text-align: center;
+          .font-size(16);
+          line-height: 32*@rem;
+          overflow: hidden;
+          padding: 15*@rem 20*@rem;
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      span:nth-child(2){
+        select{
+          border:1px solid #ccc;
+          .font-size(16);
+          padding: 5*@rem 15*@rem;
+          height: 50*@rem;
+        }
+      }
+      .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+    }
+
+  }
+}
+

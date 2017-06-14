@@ -1,0 +1,268 @@
+// 公共模块引入
+@import "px2rem";     // 导入换算 less
+
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+
+.header{
+    background-color: #FF841D;
+    box-sizing: border-box;
+    padding: 12*@rem;
+    .fb-header{
+        .right{
+            float: right;
+            width: 50*@rem;
+            height: 50*@rem;
+            a{
+                img{
+                    width: 50*@rem;
+                    height: 50*@rem;
+                }
+            }
+        }
+        .left{
+            height: 50*@rem;
+            overflow: hidden;
+            a{
+                img{
+                    height: 50*@rem;
+                }
+            }
+        }
+    }
+}
+
+.fb-section {
+    line-height: 88*@rem;
+    color: black;
+    // 商品内容介绍等 建议 使用函数，根据 dpr 使用对应的 px 字体大小
+    // 要设字体大小为 16px 就 .font-size(16)
+    .font-size(16);
+    .section{
+        height: 100*@rem;
+        .right{
+            float: right;
+            width: 150*@rem;
+            height: 100*@rem;
+            opacity: 0.2;
+            padding-right: 20*@rem;
+            input{
+                height: 64*@rem;
+                width: 90%;
+                background-color: #FF841D;
+                text-align: center;
+                color: #fff;
+                border-radius: 30*@rem;
+            }
+        }
+        .left{
+            height: 100*@rem;
+            overflow: hidden;
+            padding-left: 20*@rem;
+            border-radius: 30*@rem;
+            input{
+                //background-color: blue;
+                height: 63*@rem;
+                width: 95%;
+                background-color: #F1F1F1;
+                padding-left: 20*@rem;
+            }
+        }
+    }
+}
+
+//菜单
+.fb-menu{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #F1F1F1;
+    .menu{
+        background-color: #fff;
+        //height: 522*@rem;
+        padding: 10*@rem;
+        ul{
+            margin-top: 30*@rem;
+            li{
+                float: left;
+                width: 25%;
+                padding-top: 12*@rem;
+                a{
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    img{
+                        width: 100*@rem;
+                        display: block;
+                        margin:0 auto;
+                    }
+                    p{
+                        .font-size(16);
+                        text-align: center;
+                        padding-top: 12*@rem;
+                    }
+                }
+            }
+        }
+    }
+}
+//recommen
+.recommen{
+    height: 70*@rem;
+    background-color: #FF9E23;
+    padding: 0 15*@rem;
+    .box{
+        span{
+            .font-size(16);
+            height: 70*@rem;
+            line-height: 70*@rem;
+            color: #fff;
+        }
+        img{
+            width: 35*@rem;
+            height: 35*@rem;
+            margin-top: 15*@rem;
+        }
+    }
+}
+//recommen-product
+.recommen-product{
+    .list{
+        ul{
+            li{
+                height: 258*@rem;
+                padding: 14*@rem 8*@rem;
+                a{
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    .pic{
+                        width: 230*@rem;
+                        height: 100%;
+                        img{
+                            width: 210*@rem;
+                        }
+                    }
+                    .info{
+                        padding-left: 230*@rem;
+                        height: 100%;
+                        .top{
+                            height:50%;
+                            width: 100%;
+                            span:nth-child(1){
+                                .font-size(16);
+                                color: #000;
+                                font-weight: 700;
+                            }
+                            span:nth-child(2){
+                                color: #FF5F17;
+                                .font-size(16);
+                            }
+                        }
+                        .bottom{
+                            height: 50%;
+                            color: #B1A3A1;
+                            .font-size(16);
+                            padding-top: 32*@rem;
+                        }
+                    }
+                }
+            }
+        }
+        .more-bar{
+            height: 85*@rem;
+            padding: 20*@rem 20*@rem 0;
+            a{
+                display: block;
+                background-color: #F8F8F8;
+                width: 100%;
+                height: 100%;
+                border-radius: 16*@rem;
+                text-align: center;
+                line-height: 65*@rem;
+                .font-size(16);
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    }
+}
+//list-title
+.list-title{
+    padding-top: 20*@rem;
+    background-color: #F1F1F1;
+    .box{
+        height: 70*@rem;
+        background-color: #FF9F23;
+        padding: 0 15*@rem;
+        span{
+            .font-size(16);
+            height: 70*@rem;
+            line-height: 70*@rem;
+            color: #fff;
+        }
+        img{
+            width: 35*@rem;
+            height: 35*@rem;
+            margin-top: 15*@rem;
+        }
+    }
+}
+//footer
+.footer{
+    .top{
+        padding-top: 50*@rem;
+        background-color: #F1F1F1;
+        a:nth-child(1){
+            display: block;
+            width: 30%;
+            float: left;
+            height:67*@rem;
+            text-align: center;
+            line-height: 67*@rem;
+            background-color: #F1F1F1;
+            .font-size(22);
+            color: #000;
+        }
+        a:nth-child(2){
+            display: block;
+            width: 30%;
+            background-color: #F1F1F1;
+            float: left;
+            height:67*@rem;
+            .font-size(22);
+            text-align: center;
+            line-height: 67*@rem;
+            color: #000;
+        }
+        a:nth-child(3){
+            display: block;
+            width: 40%;
+            background-color: #F1F1F1;
+            float: left;
+            height:67*@rem;
+            .font-size(22);
+            text-align: center;
+            line-height: 67*@rem;
+            color: #000;
+            img{
+                width: 30*@rem;
+                height: 30*@rem;
+            }
+        }
+    }
+    .mft-msg {
+        padding: 40*@rem;
+        p {
+            text-align: center;
+            .font-size(12);
+            color: #666;
+        }
+        a {
+            .font-size(12);
+            color: #666;
+        }
+    }
+}
+

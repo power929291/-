@@ -1,0 +1,116 @@
+// 公共模块引入
+@import "px2rem";     // 导入换算 less
+
+/* 用法：
+    使用例子 1：高度量出来 88px =>  height: 88*@rem;
+    使用例子 2：字体大小 14px   =>  .font-size(14);
+*/
+/* header 公共顶部栏  */
+.header{
+  background-color: #FF841D;
+  box-sizing: border-box;
+  padding: 6*@rem;
+  height: 50*@rem;
+  .head{
+    .back{
+      width: 50px;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+      float: left;
+      position: relative;
+      a{
+        .font-size(30);
+        color: #fff;
+      }
+    }
+    h1{
+      text-align: center;
+      color: #fff;
+      font-size: 22px;
+    }
+  }
+}
+//container
+.container{
+  .cu-content{
+    padding: 15*@rem 20*@rem;
+    background-color: #fff;
+    h3{
+      .font-size(22);
+      margin: 20*@rem auto 15*@rem auto;
+      font-weight: 800;
+    }
+    h4{
+      color: #ff6c00;
+      font-weight: 700;
+      margin: 15*@rem auto;
+    }
+    .info{
+      height:40*@rem;
+      span{
+        .font-size(12);
+        color: #999;
+      }
+    }
+    .content{
+      .picwrap{
+        float: right;
+        width: 100*@rem;
+        img{
+          width: 100*@rem;
+          height: 100*@rem;
+        }
+      }
+      .conn{
+        margin: 10*@rem 0;
+        p{
+          .font-size(16);
+          margin-top: 10*@rem;
+        }
+      }
+    }
+  }
+  .golink{
+    a{
+      background-color: #FF9000;
+      display: block;
+      height: 60*@rem;
+      text-align: center;
+      color: #fff;
+      line-height: 60*@rem;
+      margin: 10*@rem 20*@rem;
+      border-radius: 10*@rem;
+      .font-size(16);
+    }
+  }
+  .cu-content-pl{
+    .tit{
+      height: 35*@rem;
+      .font-size(16);
+      background-color: #fff;
+      line-height: 35*@rem;
+      padding-left: 10*@rem;
+    }
+    .reply{
+      .form{
+        border: 1px solid #ccc;
+        textarea{
+          width: 100%;
+          //border:1px solid #ccc;
+          //margin: 20*@rem 20*@rem;
+        }
+        .ctrl{
+          text-align: right;
+          height: 50*@rem;
+          input{
+            padding: 15*@rem 30*@rem;
+            background-color: #ff841d;
+            border-radius: 5*@rem;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

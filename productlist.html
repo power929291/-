@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <!-- 自己的 CSS 初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 自己页面的 css -->
+  <link rel="stylesheet" href="css/productlist.css">
+</head>
+<body>
+  <section class="product-list">
+    <div class="product-list-title">
+      <!--<a href="index.html" class="list-title1">首页</a>-->
+      <!--&gt;-->
+      <!--<a href="category.html" class="list-title2">全部分类</a>-->
+      <!--&gt;-->
+      <!--<a href="#" class="list-title3">电视</a>-->
+      <!--<a href="#" class="select">筛选</a>-->
+    </div>
+    <div class="product">
+      <ul>
+        <!--<li>-->
+          <!--<a href="#"></a>-->
+          <!--<div class="pic">-->
+            <!--<img src="images/Thumb.png" alt="">-->
+          <!--</div>-->
+          <!--<div class="info">-->
+            <!--<div class="tit">乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</div>-->
+            <!--<div class="price">-->
+              <!--<em>￥1999.00</em>-->
+              <!--<span class="star">-->
+                <!--<em class="star5"></em>-->
+              <!--</span>-->
+            <!--</div>-->
+            <!--<div class="other">-->
+              <!--<em>报价(6)</em>-->
+              <!--<em>评论(2286)</em>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</li>-->
+      </ul>
+      <div class="clearfix page">
+        <span class="w33 one">
+          <a href="#">上一页</a>
+        </span>
+        <span class="w33 two">
+          <select name="select" id="selectPage" selected>
+            <option value="1" selected>1/3</option>
+            <option value="2">2/3</option>
+            <option value="3">3/3</option>
+          </select>
+        </span>
+        <span class="w33 three">
+          <a href="#">下一页</a>
+        </span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+
+<!--2.定义模板-->
+<!--result 是后台数据数据的名字-->
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+  <a href="index.html" class="list-title1">首页</a>
+  >
+  <a href="category.html" class="list-title2">全部分类</a>
+  >
+  <a href="#" class="list-title3">{{item.category}}</a>
+  <a href="#" class="select">筛选</a>
+  {{/each}}
+
+</script>
+
+<script id="tplstr" type="text/html">
+  {{each result as item index}}
+    <li>
+      <a class="dian" href="bijia.html?productid={{item.productId}}&category=">
+        <div class="pic">
+          {{#item.productImg}}
+        </div>
+        <div class="info">
+          <div class="tit">{{item.productName}}</div>
+          <div class="price">
+            <em>{{item.productPrice}}</em>
+                <span class="star">
+                  <em class="star5"></em>
+                </span>
+          </div>
+          <div class="other">
+            <em>{{item.productQuote}}</em>
+            <em>{{item.productCom}}</em>
+          </div>
+        </div>
+      </a>
+    </li>
+  {{/each}}
+
+</script>
+
+
+<!--3请求数据-->
+<script>
+  $(function () {
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+    console.log(obj);
+    var cate = obj.categoryId;
+    var page = obj.pageid;
+    console.log(page);
+    var dian = decodeURI(obj.category);
+    console.log(dian);
+
+
+    $.ajax({
+      url:Route.baseUrl + '/api/getcategorybyid',
+      data:{
+        categoryid:obj.categoryId
+      },
+      success:function(data){
+        var tplstr = template('tpl',data);
+        $('.product-list-title').html(tplstr);
+      }
+    })
+
+    $.ajax({
+      url:Route.baseUrl + '/api/getproductlist',
+      data:{
+        categoryid:obj.categoryId
+      },
+      success:function(data){
+//        console.log(data);
+//        console.log(data.result);
+        var tplstr = template('tplstr',data);
+//        console.log(tplstr);
+        $('.product ul').html(tplstr);
+
+//        var arr = data.result;
+
+        var arr1 = $('.product ul li a');
+//        console.log(arr1);
+
+//        $(selector).each(function(index,element){});
+        arr1.each(function (index,el) {
+          var shu =data.result[index].productId
+//          console.log(shu);
+//          console.log(el);
+//          el就是每个a
+          $(el).attr("href","bijia.html?productid="+shu+"&category="+dian)
+
+          $('.one a').attr('href',"productlist.html?categoryid="+cate+"&category="+dian+"&pageid="+(+page-1)+"")
+          $('.three a').attr('href',"productlist.html?categoryid="+cate+"&category="+dian+"&pageid="+(+page+1)+"")
+        })
+
+
+      }
+    })
+
+  })
+
+</script>

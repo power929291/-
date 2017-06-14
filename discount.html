@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>discount.html</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/discount.css"/>
+</head>
+
+<body>
+<section id="header" class="header">
+    <div class="head">
+      <div class="back">
+        <a href="inlanddiscount.html" class="iconfont">&#xe697;</a>
+      </div>
+      <h1>国内折扣</h1>
+      <div class="home">
+        <a href="javascript:;"></a>
+      </div>
+    </div>
+</section>
+<section id="container" class="container">
+  <div class="container">
+    <div class="cu-content">
+      <h3 class="title">西域美农新疆特产五星和田红枣250g*2</h3>
+      <h4>19.8元(5件99元)</h4>
+      <div class="info">
+        <span class="mall">京东商城</span>
+        <span class="addtime">10-22 13:28</span>
+        <span class="author">chenjin / 慢慢买</span>
+      </div>
+      <div class="content clearfix">
+        <div class="picwrap">
+          <img src="images/2017041.jpg" alt="">
+        </div>
+        <div class="conn">
+          <p>原价25.9一斤，凑满5件只要99元价格。 枣子紧实，入口甜爽。适合公司人多的买吧，价格还是不错的。</p>
+          <p>
+            <img src="images/55d.jpg" alt="">
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="golink">
+      <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a>
+    </div>
+    <div style="text-align: center; margin: 20px 10px;">
+      <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+    </div>
+    <div class="cu-content-pl ui-border-t">
+
+    </div>
+  </div>
+</section>
+<section id="ctl00_foot">
+  <div class="foot_top">
+    <a href="javascript:;">登录</a>
+    <a href="javascript:;">注册</a>
+    <a href="#" style="width: 40%; border: 0;">
+      <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+    </a>
+  </div>
+  <div class="footer">
+    <p>
+      <a href="javascript:;" style="color: Red;">手机APP下载</a>
+      <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+    </p>
+    <p>m.manmanbuy.com</p>
+  </div>
+</section>
+
+</body>
+</html>
+
+<script src="./common/config.js"></script>
+<script src="./common/common.js"></script>
+
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+    <div class="cu-content">
+      <h3 class="title">{{item.productName}}</h3>
+      <h4>{{item.productPrice}}</h4>
+      <div class="info">
+        <span class="mall">{{item.productFrom}}</span>
+        <span class="addtime">{{item.productTime}}</span>
+        <span class="author">{{item.productTips}}</span>
+      </div>
+      <div class="content clearfix">
+        <div class="picwrap">
+          <img src="images/2017041.jpg" alt="">
+        </div>
+        <div class="conn">
+          <p>{{item.productInfo}}</p>
+          <p>
+            {{#item.productImg}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="golink">
+        <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+    <div style="text-align: center; margin: 20px 10px;">
+      <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+    </div>
+    <div class="cu-content-pl ui-border-t">
+      <div class="tit">发表评论</div>
+      <div class="reply">
+        <div class="form">
+          <textarea name="" id=""  rows="5"></textarea>
+          <div class="ctrl">
+            <input type="submit" value="发表评论">
+          </div>
+        </div>
+      </div>
+      <div class="tit">最新评论</div>
+    </div>
+  {{/each}}
+</script>
+
+<!--3请求数据-->
+
+<script>
+
+  $(function(){
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+//    console.log(obj);
+
+    $(function () {
+      $.ajax({
+        url:Route.baseUrl + '/api/getdiscountproduct',
+        data:obj,
+        success:function(data){
+//          console.log(data);
+          var tplstr = template('tpl',data);
+//          console.log(tplstr);
+          $('.container').html(tplstr);
+        }
+      })
+    })
+  })
+
+</script>
+
+

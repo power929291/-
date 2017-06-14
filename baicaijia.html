@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- flexible CSS 初始化 -->
+  <script src="lib/flexible/flexible_css.js"></script>
+  <!-- flexible 适配插件 -->
+  <script src="lib/flexible/flexible.js"></script>
+
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/baicaijia.css"/>
+</head>
+<body>
+  <section id="header" class="header">
+    <div class="head">
+      <div class="back">
+        <a href="index.html" class="iconfont">&#xe697;</a>
+      </div>
+      <h1>白菜价-淘宝内部券</h1>
+      <div class="home">
+        <a href="javascript:;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mheadnav">
+    <div class="nav-titles">
+      <div class="ul-wapper" id="wapper">
+        <ul class="clearfix">
+          <!--<li class="active"><a href="#">热销</a></li>-->
+          <!--<li><a href="#">热销1</a></li>-->
+          <!--<li><a href="#">热销2</a></li>-->
+          <!--<li><a href="#">热销3</a></li>-->
+          <!--<li><a href="#">热销4</a></li>-->
+          <!--<li><a href="#">热销5</a></li>-->
+          <!--<li><a href="#">热销6</a></li>-->
+          <!--<li><a href="#">热销7</a></li>-->
+          <!--<li><a href="#">热销8</a></li>-->
+          <!--<li><a href="#">热销9</a></li>-->
+          <!--<li><a href="#">热销10</a></li>-->
+          <!--<li><a href="#">热销11</a></li>-->
+          <!--<li><a href="#">热销12</a></li>-->
+          <!--<li><a href="#">热销13</a></li>-->
+          <!--<li><a href="#">热销14</a></li>-->
+          <li><a href="#">热销15</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-searchbtn"></div>
+  </section>
+  <section class="bcj-list">
+    <ul class="clearfix">
+      <!--<li class="ui-border-tb">-->
+        <!--<a href="http://s.click.taobao.com/lkqGHQx" ></a>-->
+        <!--<div class="pic">-->
+            <!--<img src="images/TB2H6.jpg" alt="">-->
+          <!--</div>-->
+        <!--<div class="inf">-->
+            <!--<div class="i">-->
+              <!--<div class="t">-->
+                <!--<span class="b">[包邮]</span>-->
+                <!--多功能车载手机支架仪表台-->
+              <!--</div>-->
+              <!--<div class="pr">-->
+                <!--<i>券后</i>-->
+                <!--<em>￥</em>-->
+                <!--7.9-->
+                <!--<del>¥17.9</del>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="o">-->
+              <!--<div class="bar">-->
+                <!--<a href="http://shop.m.taobao.com/shop/coupon.htm?activityId=27a14c9fc6bb4a48b917d567fcf8f664&sellerId=2246833798"></a>-->
+                <!--<i>-->
+                  <!--<em style="width:1%;"></em>-->
+                  <!--<span>1%</span>-->
+                <!--</i>-->
+                <!--<b>已领82张</b>-->
+              <!--</div>-->
+              <!--<div class="b clearfix">-->
+                <!--<div class="q">-->
+                  <!--<a href="http://shop.m.taobao.com/shop/coupon.htm?activityId=27a14c9fc6bb4a48b917d567fcf8f664&sellerId=2246833798">点此领15元优惠券</a>-->
+                <!--</div>-->
+                <!--<div class="g">-->
+                  <!--<a href="https://item.taobao.com/item.htm?id=536053384174">下单链接</a>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+      <!--</li>-->
+    </ul>
+  </section>
+</body>
+</html>
+<script src="./common/config.js"></script>
+<script src="./common/common1.js"></script>
+
+<!--1.引入jquery,template-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/template.js"></script>
+<script src="js/iscroll.js"></script>
+
+<script id="tpl" type="text/html">
+  {{each result as item index}}
+
+  <li><a href="baicaijia.html?titleid={{item.titleId}}">{{item.title}}</a></li>
+
+  {{/each}}
+</script>
+<script id="tplstr" type="text/html">
+  {{each result as item index}}
+
+  <li class="ui-border-tb">
+    <a href="http://s.click.taobao.com/lkqGHQx" target="_blank"></a>
+    <div class="pic">
+      {{#item.productImg}}
+    </div>
+    <div class="inf">
+      <div class="i">
+        <div class="t">
+          {{#item.productName}}
+        </div>
+        <div class="pr">
+          {{#item.productPrice}}
+        </div>
+      </div>
+      <div class="o">
+          {{#item.productCouponRemain}}
+        <div class="b">
+          <div class="q">
+            {{#item.productCoupon}}
+          </div>
+          <div class="g">
+            {{#item.productHref}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+
+  {{/each}}
+</script>
+
+
+
+<script>
+  $(function () {
+
+    var href = window.location.href;
+    //函数调用返回数据，用变量接收下
+    var obj = window.tools.query( href );
+    var shu = obj.titleid;
+    console.log(shu);
+    var titleid = shu ;
+
+    $.ajax({
+      url:Route.baseUrl + '/api/getbaicaijiatitle',
+      success:function (data) {
+          var tpl = template('tpl',data);
+//          console.log(tpl);
+          $('.ul-wapper ul').html(tpl);
+        var lis = $('.ul-wapper ul li')
+        lis.eq(shu).addClass('active');
+
+//        var dian = lis.eq(shu).innerWidth();
+//        console.log(dian);
+
+
+
+
+        (function () {
+          var myScroll;
+          function loaded() {
+            myScroll = new IScroll('#wapper',{
+              scrollX:true,
+              scrollY:false
+            })
+          }
+
+          //找到所有的li，算出li的宽，设置给ul
+          //element是一个DOM对象，需要加钱转成JQ对象
+          var width = 0;
+          $('#wapper ul li').each(function (index,element) {
+            width += $(element).innerWidth();
+          })
+          width += $('.nav-searchbtn').width();
+          $('#wapper ul').width(width);
+
+          loaded();
+
+          $(function () {
+
+
+            $.ajax({
+              url:Route.baseUrl + '/api/getbaicaijiaproduct',
+              data:{
+                titleid:titleid || 0
+              },
+              success:function (data) {
+//        console.log(data);
+                var tpl = template('tplstr',data);
+//        console.log(tpl);
+                $('.bcj-list ul').html(tpl);
+
+
+
+              }
+            })
+          })
+
+
+          $('#wapper').on('click','li',function(){
+            $(this).addClass('active').siblings().removeClass('active');
+
+            myScroll.scrollToElement($(this)[0]);
+
+          })
+        })();
+      }
+    })
+  })
+
+</script>
+
+
+<!--<script>-->
+<!--//  将函数放在闭包里面-->
+  <!--(function () {-->
+    <!--var myScroll;-->
+    <!--function loaded() {-->
+        <!--myScroll = new IScroll('#wapper',{-->
+          <!--scrollX:true,-->
+          <!--scrollY:false-->
+        <!--})-->
+    <!--}-->
+
+    <!--//找到所有的li，算出li的宽，设置给ul-->
+    <!--//element是一个DOM对象，需要加钱转成JQ对象-->
+    <!--var width = 0;-->
+    <!--$('#wapper ul li').each(function (index,element) {-->
+        <!--width += $(element).innerWidth();-->
+    <!--})-->
+    <!--width += $('.nav-searchbtn').width();-->
+    <!--$('#wapper ul').width(width);-->
+
+    <!--loaded();-->
+
+    <!--$('#wapper').on('click','li',function(){-->
+      <!--$(this).addClass('active').siblings().removeClass('active');-->
+
+      <!--myScroll.scrollToElement($(this)[0]);-->
+    <!--})-->
+
+
+  <!--})();-->
+<!--</script>-->
+
+<!--<script>-->
+  <!--(function() {-->
+    <!--var myScroll;-->
+
+    <!--function loaded () {-->
+      <!--myScroll = new IScroll('#wapper', {-->
+        <!--scrollX: true,-->
+        <!--scrollY: false-->
+      <!--});-->
+    <!--}-->
+
+
+    <!--var width = 0;-->
+    <!--$('#wapper>ul>li').each(function( index, item ){-->
+      <!--width += $( item ).innerWidth();-->
+    <!--})-->
+
+    <!--// 右侧搜索框 盖住了 部分内容，所以需要加上对应的宽度-->
+    <!--width += $('.nav-searchbtn').width();-->
+    <!--console.log( width );-->
+    <!--$('#wapper>ul').width( width );-->
+
+    <!--// loaded 一定要在你的父容器及 子容器宽度完全设置完成后才能调用，才有效-->
+    <!--loaded();-->
+
+    <!--// 绑定点击事件，点击时切换样式，并让被选中的元素跑到第一个去-->
+    <!--$('#wapper').on('click', 'li', function() {-->
+      <!--// 排他切换样式-->
+      <!--$(this).addClass('active').siblings().removeClass('active');-->
+      <!--// 让其第一个显示-->
+      <!--// 滚动到哪一个元素-->
+      <!--myScroll.scrollToElement($(this)[0]);-->
+    <!--});-->
+
+  <!--})();-->
+
+
+  <!--// (function() {-->
+  <!--//     var myScroll;-->
+  <!--//     function loaded () {-->
+  <!--//         myScroll = new IScroll('#wapper', {-->
+  <!--//             scrollX: true,-->
+  <!--//             scrollY: false-->
+  <!--//         });-->
+  <!--//     }-->
+  <!--//     var width = 0;-->
+  <!--//     $('#wapper>ul>li').each(function( index, item ) {-->
+  <!--//         width += $( item ).innerWidth();-->
+  <!--//     });-->
+  <!--//     width += $('.nav-searchbtn').innerWidth();-->
+  <!--//     $('#wapper>ul').width(width);-->
+  <!--//     loaded();-->
+  <!--// })();-->
+
+<!--</script>-->
+
